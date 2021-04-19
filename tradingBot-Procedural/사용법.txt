@@ -1,0 +1,12 @@
+모든 마켓(코인)은 KRW 거래만 가능
+종료는 컨트롤+c
+
+setting.json 설정법
+period 			반복 주기 'min', 'day'로 설정
+minute 			반복 주기를 'min'으로 설정 몇분마다 반복할지 설정 60 or 240으로 설정
+Allmarket 		true로 설정시 모든 코인 거래, false로 설정시 markets에 지정한 코인만 거래
+markets 			Allmarket이 false일때 거래할 마켓을 지정 
+whiteList			여기 등록된 마켓은 거래 안함
+maxOfCandles		설정한 봉의 갯수로 데이터를 수집( 예를 들어 period가 day이고 maxDay가 20이면 20일전까지 데이터를 분석)
+maWindow		이동 평균선을 계산할 기준
+maxOfPurchaseMarket 	거래할 코인 수 예를 들어 5지정시 최대 5개의 코인만 거래 (5개 코인 사면 더 이상 거래 안함)

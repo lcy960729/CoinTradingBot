@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/lcy/Desktop/Projects/tradingbot/src/main/java/com/cy/tradingbot/services</OriginalElement>
+  <nodes>
+    <node x="839.2205284552845" y="102.02146267668888">com.cy.tradingbot.services.coin.SellCoinService</node>
+    <node x="1047.354674796748" y="154.5303266676122">com.cy.tradingbot.services.log.LogService</node>
+    <node x="1404.358232211772" y="211.13095069257324">com.cy.tradingbot.services.wallet.GetWalletService</node>
+    <node x="1018.8546747967479" y="252.0">com.cy.tradingbot.services.TradingBotService</node>
+    <node x="1067.6356013331442" y="-93.74991726941795">com.cy.tradingbot.services.order.CreateOrderService</node>
+    <node x="390.58332857704545" y="252.00000000000003">com.cy.tradingbot.services.coin.UpdateTargetPriceAndMovingAverageForCoinService</node>
+    <node x="1773.6888171313992" y="102.02146267668888">com.cy.tradingbot.services.candle.GetTickerToUpBitService</node>
+    <node x="769.347999707128" y="-93.74991726941795">com.cy.tradingbot.services.order.GetOrderService</node>
+    <node x="494.08332857704545" y="67.49113600907674">com.cy.tradingbot.services.candle.GetCandlesToUpBitService</node>
+    <node x="524.5833285770454" y="160.0">com.cy.tradingbot.services.candle.GetCandlesService</node>
+    <node x="1639.6843561658209" y="211.13095069257324">com.cy.tradingbot.services.wallet.GetWalletToUpBitService</node>
+    <node x="738.847999707128" y="-185.74991726941795">com.cy.tradingbot.services.order.GetOrderToUpBitService</node>
+    <node x="1034.854674796748" y="358.9533399517799">com.cy.tradingbot.services.log.RecordService</node>
+    <node x="1227.0506742110042" y="102.02146267668888">com.cy.tradingbot.services.coin.BuyCoinService</node>
+    <node x="1037.1356013331442" y="-185.74991726941795">com.cy.tradingbot.services.order.CreateOrderToUpBitService</node>
+    <node x="1011.1356013331442" y="-0.8749586347089746">com.cy.tradingbot.services.order.RequestOrderService</node>
+    <node x="1381.069852644438" y="-93.74991726941795">com.cy.tradingbot.services.order.DeleteOrderService</node>
+    <node x="1359.4232029591606" y="-185.74991726941795">com.cy.tradingbot.services.order.DeleteOrderToUpBitService</node>
+    <node x="1523.0476078466643" y="102.02146267668888">com.cy.tradingbot.services.candle.GetTickerService</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.cy.tradingbot.services.coin.BuyCoinService" target="com.cy.tradingbot.services.log.LogService" relationship="TO_ONE">
+      <point x="-63.75" y="-15.0" />
+      <point x="1248.3006742110042" y="117.02146267668888" />
+      <point x="1115.354674796748" y="117.02146267668888" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.TradingBotService" target="com.cy.tradingbot.services.log.RecordService" relationship="TO_ONE">
+      <point x="48.25" y="-15.0" />
+      <point x="1163.604674796748" y="267.0" />
+      <point x="1115.354674796748" y="267.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.coin.BuyCoinService" target="com.cy.tradingbot.services.order.RequestOrderService" relationship="TO_ONE">
+      <point x="-21.25" y="-15.0" />
+      <point x="1290.8006742110042" y="117.02146267668888" />
+      <point x="1248.3006742110042" y="117.02146267668888" />
+      <point x="1248.3006742110042" y="59.04883468065994" />
+      <point x="1118.6356013331442" y="59.04883468065994" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.order.GetOrderToUpBitService" target="com.cy.tradingbot.services.order.GetOrderService" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="859.347999707128" y="-78.74991726941795" />
+      <point x="814.347999707128" y="-78.74991726941795" />
+      <point x="-45.0" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.order.RequestOrderService" target="com.cy.tradingbot.services.order.CreateOrderService" relationship="TO_ONE">
+      <point x="0.0" y="-15.0" />
+      <point x="1118.6356013331442" y="-32.31243795206346" />
+      <point x="1118.6356013331442" y="-32.31243795206346" />
+      <point x="-51.0" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.TradingBotService" target="com.cy.tradingbot.services.coin.BuyCoinService" relationship="TO_ONE">
+      <point x="16.08333333333337" y="-15.0" />
+      <point x="1195.7713414634147" y="252.0" />
+      <point x="1195.7713414634147" y="211.0" />
+      <point x="1312.0506742110042" y="211.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.coin.SellCoinService" target="com.cy.tradingbot.services.order.RequestOrderService" relationship="TO_ONE">
+      <point x="42.75" y="-15.0" />
+      <point x="967.4705284552845" y="117.02146267668888" />
+      <point x="990.4431564513134" y="117.02146267668888" />
+      <point x="990.4431564513134" y="59.04883468065994" />
+      <point x="1118.6356013331442" y="59.04883468065994" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.TradingBotService" target="com.cy.tradingbot.services.wallet.GetWalletService" relationship="TO_ONE">
+      <point x="80.41666666666674" y="-15.0" />
+      <point x="1195.7713414634147" y="267.0" />
+      <point x="1449.858232211772" y="267.0" />
+      <point x="-45.5" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.coin.UpdateTargetPriceAndMovingAverageForCoinService" target="com.cy.tradingbot.services.candle.GetCandlesService" relationship="TO_ONE">
+      <point x="0.0" y="-15.0" />
+      <point x="622.5833285770454" y="175.0" />
+      <point x="671.5833285770454" y="175.0" />
+      <point x="49.0" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.order.CreateOrderToUpBitService" target="com.cy.tradingbot.services.order.CreateOrderService" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="1169.6356013331442" y="-78.74991726941795" />
+      <point x="1215.1659280007564" y="-78.74991726941795" />
+      <point x="1215.1659280007564" y="-87.66189193022257" />
+      <point x="1169.6356013331442" y="-87.66189193022257" />
+      <point x="1169.6356013331442" y="-78.74991726941795" />
+      <point x="1220.6356013331442" y="-78.74991726941795" />
+      <point x="51.0" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.coin.BuyCoinService" target="com.cy.tradingbot.services.candle.GetTickerService" relationship="TO_ONE">
+      <point x="21.25" y="-15.0" />
+      <point x="1333.3006742110042" y="117.02146267668888" />
+      <point x="1535.1374745898927" y="117.02146267668888" />
+      <point x="1535.1374745898927" y="132.02146267668888" />
+      <point x="-45.5" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.coin.SellCoinService" target="com.cy.tradingbot.services.log.LogService" relationship="TO_ONE">
+      <point x="-42.75" y="-15.0" />
+      <point x="881.9705284552845" y="117.02146267668888" />
+      <point x="1115.354674796748" y="117.02146267668888" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.candle.GetTickerToUpBitService" target="com.cy.tradingbot.services.candle.GetTickerService" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="1895.1888171313992" y="111.51368600198549" />
+      <point x="1659.5476078466643" y="111.51368600198549" />
+      <point x="45.5" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.coin.BuyCoinService" target="com.cy.tradingbot.services.wallet.GetWalletService" relationship="TO_ONE">
+      <point x="63.75" y="-15.0" />
+      <point x="1375.8006742110042" y="175.0" />
+      <point x="1449.858232211772" y="175.0" />
+      <point x="-45.5" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.candle.GetCandlesToUpBitService" target="com.cy.tradingbot.services.candle.GetCandlesService" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="622.5833285770454" y="175.0" />
+      <point x="573.5833285770454" y="175.0" />
+      <point x="-49.0" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.TradingBotService" target="com.cy.tradingbot.services.coin.UpdateTargetPriceAndMovingAverageForCoinService" relationship="TO_ONE">
+      <point x="-80.41666666666663" y="-15.0" />
+      <point x="1034.9380081300815" y="267.0" />
+      <point x="622.5833285770454" y="267.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.order.RequestOrderService" target="com.cy.tradingbot.services.order.GetOrderService" relationship="TO_ONE">
+      <point x="-71.66666666666669" y="-15.0" />
+      <point x="1046.9689346664775" y="-20.874958634708975" />
+      <point x="904.347999707128" y="-20.874958634708975" />
+      <point x="45.0" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.TradingBotService" target="com.cy.tradingbot.services.log.LogService" relationship="TO_ONE">
+      <point x="-48.25" y="-15.0" />
+      <point x="1115.354674796748" y="252.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.order.DeleteOrderToUpBitService" target="com.cy.tradingbot.services.order.DeleteOrderService" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="1491.4232029591606" y="-63.74991726941795" />
+      <point x="50.75" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.TradingBotService" target="com.cy.tradingbot.services.coin.SellCoinService" relationship="TO_ONE">
+      <point x="-16.08333333333337" y="-15.0" />
+      <point x="1034.9380081300815" y="252.0" />
+      <point x="1034.9380081300815" y="211.0" />
+      <point x="924.7205284552845" y="211.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.wallet.GetWalletToUpBitService" target="com.cy.tradingbot.services.wallet.GetWalletService" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="1761.1843561658209" y="226.13095069257324" />
+      <point x="1540.858232211772" y="226.13095069257324" />
+      <point x="45.5" y="15.0" />
+    </edge>
+    <edge source="com.cy.tradingbot.services.order.RequestOrderService" target="com.cy.tradingbot.services.order.DeleteOrderService" relationship="TO_ONE">
+      <point x="71.66666666666663" y="-15.0" />
+      <point x="1190.3022679998107" y="-20.874958634708975" />
+      <point x="1491.9862593007042" y="-20.874958634708975" />
+      <point x="1491.9862593007042" y="-78.74991726941795" />
+      <point x="1431.819852644438" y="-78.74991726941795" />
+      <point x="-50.75" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.9141313742437338" showDependencies="true" x="913.4429158984541" y="119.19595329267716" />
+  <SelectedNodes>
+    <node>com.cy.tradingbot.services.candle.GetCandlesService</node>
+    <node>com.cy.tradingbot.services.coin.UpdateTargetPriceAndMovingAverageForCoinService</node>
+    <node>com.cy.tradingbot.services.candle.GetCandlesToUpBitService</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

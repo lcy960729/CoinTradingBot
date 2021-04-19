@@ -1,0 +1,10 @@
+{
+    "period" : "day",
+    "minute" : 240,
+    "Allmarket" : false,
+    "markets" : ["BTT", "BTC", "TRX", "MTL","XRP", "TON", "CHZ"],
+    "whiteList" : [],
+    "maxOfCandles" : 15,
+    "maWindow" : 3,
+    "maxOfPurchaseMarket" : 3
+}

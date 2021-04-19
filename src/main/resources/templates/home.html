@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors"/>
+    <meta name="generator" content="Hugo 0.82.0"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
+
+    <title>차녕이의 트레이딩 봇 v1.0</title>
+
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            color: #555;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        table {
+            overflow: scroll;
+            width: 100%;
+            font-size: 11px;
+            color: #555;
+            border-collapse: collapse;
+        }
+
+        thead tr {
+            border-bottom: 1pt solid #cdcdcd;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="padding-top: 1vh; height: 100%; width: 100%">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                    type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                    type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Log
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="flex-sm-fill text-sm-center nav-link" href="/logout">Logout</a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="pills-tabContent" style="height: 90%;">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="accordion mb-3" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            TradingBot Settings
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <form action="#" th:action="@{/start}" method="post" role="form">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput1" placeholder="0"
+                                           name="maxOfCandle"
+                                           th:value="${maxOfCandle}">
+                                    <label for="floatingInput1">Max Of Candle</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput2" placeholder="0"
+                                           name="numOfMovingAverageWindow"
+                                           th:value="${numOfMovingAverageWindow}">
+                                    <label for="floatingInput2">Number Of Moving Average Window</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" placeholder="0" id="floatingInput3"
+                                           name="coinList"
+                                           th:value="${coinList}">
+                                    <label for="floatingInput3">Coin List (ex. "XRP BTC EOS")</label>
+                                </div>
+
+                                <button id="tradingBotBtn" class="col-sm-2 btn btn-primary" type="submit"
+                                        style="width: 100%">start
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="display-6 mb-3">Trading Information</h1>
+            <div class="input-group input-group mb-3">
+                <span class="input-group-text" id="currentTime">Current Time</span>
+                <span class="form-control" th:text="${currentTime}"></span>
+            </div>
+            <div class="input-group input-group mb-3">
+                <span class="input-group-text" id="closingTime">Closing Time</span>
+                <span class="form-control" th:text="${closingTime}"></span>
+            </div>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Time</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Current Price</th>
+                    <th scope="col">Target Price</th>
+                    <th scope="col">Purchase Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="coin : ${coins}">
+                    <td th:text="${coin.dateTime}"></td>
+                    <td th:text="${coin.name}"></td>
+                    <td th:text="${coin.currentPrice}"></td>
+                    <td th:text="${coin.targetPrice}"></td>
+                    <td th:text="${coin.purchasePrice}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+             style="height: 100%;">
+            <div class="mb-3" style="height: 40%; overflow: auto">
+                <h1 class="display-6">Daily Account Information</h1>
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Time</th>
+                        <th scope="col">Balance</th>
+                        <th scope="col">Rate Of Return</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr th:each="record : ${records}">
+                        <td th:text="${record.dateTime}"></td>
+                        <td th:text="${record.balance}"></td>
+                        <td th:text="${record.yield}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="height:60%; overflow: auto">
+                <h1 class="display-6">Log</h1>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Time</th>
+                        <th scope="col">Reason</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="log : ${logs}">
+                        <td th:text="${log.dateTime}"></td>
+                        <td th:text="${log.reason}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:inline="javascript">
+    let state = [[${state}]];
+
+    const maxOfCandle = document.getElementById("floatingInput1");
+    const numOfMovingAverageWindow = document.getElementById("floatingInput2");
+    const coinList = document.getElementById("floatingInput3");
+    const tradingBotBtn = document.getElementById("tradingBotBtn");
+
+    if (state === 'ready') {
+        maxOfCandle.readOnly = false;
+        numOfMovingAverageWindow.readOnly = false;
+        coinList.readOnly = false;
+        tradingBotBtn.textContent = "start";
+    } else {
+        maxOfCandle.readOnly = true;
+        numOfMovingAverageWindow.readOnly = true;
+        coinList.readOnly = true;
+        tradingBotBtn.textContent = "stop";
+    }
+</script>
+
+
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
