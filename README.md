@@ -15,9 +15,9 @@
 
 # 작업 결과물
 
-[절차지향에서 객체 지향으로 변경 과정](https://www.notion.so/68ca147143054580a37058d0a5e80dc7)
+[절차지향에서 객체 지향으로 변경 과정](https://lcy960729.notion.site/2021-04-10-03f28b115e1940fd8971a38ffe24ce10)
 
-[완성된 서비스 플로우](https://www.notion.so/1baa33e9acca4e6b89962b83f82fe0a1)
+[완성된 서비스 플로우](https://lcy960729.notion.site/2021-04-10-28bea17368034be7addc8dcc0a79bdbe)
 
 ---
 
